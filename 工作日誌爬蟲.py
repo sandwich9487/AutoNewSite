@@ -30,12 +30,13 @@ wait = WebDriverWait(driver, 10)
 def login():
     account_input = driver.find_element(By.ID, 'TbxAccountId')
     account_input.clear()
-
+    #輸入你的帳號
     account_input.send_keys('')
 
     password_input = driver.find_element(By.ID, 'TbxPassword')
 
     password_input.clear()
+    #輸入你的密碼
     password_input.send_keys('')
 
     
@@ -89,12 +90,14 @@ def main(m,d,bt,et,w):
     bugetno = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.ID, "bugetno_idno"))
     )
-    bugetno.send_keys("112D1-022")
+    #計畫編號
+    bugetno.send_keys("")
 
     emp = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.ID, 'emp_id'))
     )
-    emp.send_keys("A0717") 
+    #承辦人
+    emp.send_keys("") 
 
 
     month_element = WebDriverWait(driver, 10).until(
