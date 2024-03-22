@@ -11,7 +11,7 @@ import pytesseract
 import pyautogui
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import Select
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe' #tesseract.exe的安裝路徑
 import tkinter as tk
 
 
