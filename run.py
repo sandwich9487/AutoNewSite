@@ -18,7 +18,7 @@ import tkinter as tk
 
 
 
-# 配置WebDriver路径
+# 配置WebDriver
 driver_path = Service("E:\\TA\\chromedriver.exe")
 driver = webdriver.Chrome(service=driver_path)
 
@@ -30,12 +30,13 @@ wait = WebDriverWait(driver, 10)
 def login():
     account_input = driver.find_element(By.ID, 'TbxAccountId')
     account_input.clear()
-
+    #帳號
     account_input.send_keys('')
 
     password_input = driver.find_element(By.ID, 'TbxPassword')
 
     password_input.clear()
+    #密碼
     password_input.send_keys('')
 
     
@@ -57,6 +58,7 @@ def login():
     captcha_screenshot = screenshot.crop((left, top, right, bottom))
 
 
+    #驗證碼圖片路徑
     captcha_screenshot.save('E:\\TA\\captcha.png')
 
     image =cv2.imread('E:\\TA\\captcha.png', cv2.IMREAD_GRAYSCALE)
@@ -89,12 +91,14 @@ def main(m,d,bt,et,w):
     bugetno = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.ID, "bugetno_idno"))
     )
-    bugetno.send_keys("112D1-022")
+    #計畫編號
+    bugetno.send_keys("")
 
     emp = WebDriverWait(driver, 10).until(
         EC.visibility_of_element_located((By.ID, 'emp_id'))
     )
-    emp.send_keys("A0717") 
+    #承辦人
+    emp.send_keys("") 
 
 
     month_element = WebDriverWait(driver, 10).until(
